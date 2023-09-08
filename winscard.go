@@ -50,7 +50,7 @@ type Client struct {
 
 	mutex sync.Mutex
 
-	readerStateDescriptors [MaxReaderStateDescriptors]ReaderState
+	ReaderStateDescriptors [MaxReaderStateDescriptors]ReaderState
 }
 
 // EstablishContext asks the PCSC daemon to create a context
@@ -220,12 +220,12 @@ func (client *Client) ListReaders() ([]string, error) {
 	}
 
 	var names []string
-	for i := range client.readerStateDescriptors {
+	for i := range client.ReaderStateDescriptors {
 		desc, err := getReaderState(response[i*ReaderStateDescriptorLength:])
 		if err != nil {
 			return nil, err
 		}
-		client.readerStateDescriptors[i] = desc
+		client.ReaderStateDescriptors[i] = desc
 		if desc.Name[0] == 0 {
 			break
 		}

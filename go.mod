@@ -1,1 +1,1 @@
-module github.com/gballet/go-libpcsclite
+module github.com/Domme705/go-libpcsclite
