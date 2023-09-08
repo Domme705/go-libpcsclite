@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/golang:1.13.4
-    working_directory: /go/src/github.com/gballet/go-libpcsclite
+    working_directory: /go/src/github.com/Domme705/go-libpcsclite
 
     steps:
       - checkout
